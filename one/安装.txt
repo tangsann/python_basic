@@ -1,0 +1,24 @@
+------------------------
+1、修改ip
+cd /etc/sysconfig/network-scripts
+vim ifcfg-ens32
+2、重启网络管理器服务
+systemctl restart NetworkManager
+3、替换默认源
+sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+    -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.aliyun.com/rockylinux|g' \
+    -i.bak \
+    /etc/yum.repos.d/Rocky-*.repo
+
+dnf makecache
+4、更新下系统软件包
+dnf -y update
+5、安装python3.8
+yum install -y gcc python3.8 python38-devel
+软连接(可选)
+ln -sb /usr/bin/python3.8 /usr/bin/python3
+ln -sb /usr/bin/pip3.8 /usr/bin/pip3
+6、下载python模块，切换到豆瓣源
+pip3 install  -i https://pypi.douban.com/simple/ websocket
+7、python资料
+https://www.runoob.com/python/python-tutorial.html

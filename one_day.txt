@@ -1,0 +1,155 @@
+[root@localhost ~]# python3
+Python 3.8.13 (default, Nov  8 2022, 17:19:05)
+[GCC 8.5.0 20210514 (Red Hat 8.5.0-15)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+
+1、帮助命令
+>>> import  random
+>>> help(random)
+
+2、运算
+>>> 4 ** 3
+64
+>>> 4 >> 1
+2
+>>> 4 << 1
+8
+>>> round(1.111,2)
+1.11
+>>> 11 // 4
+2
+>>> -10 // 4
+-3
+
+3、数学模块
+>>> import math
+>>> abs(1-10)
+9
+>>> sum((1,2323,23,1))
+2348
+>>> min(1,2323,1)
+1
+>>> max(1,2324,12)
+2324
+>>> ran_list = ['qytang','python','network']
+>>> ran_list
+['qytang', 'python', 'network']
+>>> type(ran_list)
+<class 'list'>
+>>> random.choice(ran_list)
+'qytang'
+>>> random.sample(ran_list,3)
+['python', 'network', 'qytang']
+>>> random.sample(ran_list,2)
+['qytang', 'python']
+
+4、字符串常量
+>>> s = 's\tp\nam'
+>>> s
+'s\tp\nam'
+>>> print(s)
+s       p
+am
+>>> s = r'C:\new\test.spm'
+>>> s
+'C:\\new\\test.spm'
+>>> print(s)
+C:\new\test.spm
+
+5、字符串基本操作
+>>> 'abc' + 'def'
+'abcdef'
+>>> 'abc''def'
+'abcdef'
+>>> len('abcdef')
+6
+>>> print('-' * 80)
+--------------------------------------------------------------------------------
+>>> myjob = 'hacker'
+>>> myjob
+'hacker'
+>>> for line in myjob:
+...     print(line)
+...
+h
+a
+c
+k
+e
+r
+>>> for line in myjob:
+...     print(line,end='')
+...
+hacker>>>
+>>> 'h' in myjob
+True
+>>> s = 'welcome to qytang'
+>>> s
+'welcome to qytang'
+>>> s[0], s[2]
+('w', 'l')
+>>> s[1:7]
+'elcome'
+>>> s[:]
+'welcome to qytang'
+
+6、字符串方法
+>>> s = 'welcome to qytang'
+>>> news = s.replace('qytang','huawei')
+>>> news
+'welcome to huawei'
+>>> where = s.find('to')
+>>> where
+8
+>>> s = '\n\twelcome to python\n\r\t'
+>>> s=s.strip()
+>>> print(s)
+welcome to python
+>>>
+>>> s = 'qytang'
+>>> s
+'qytang'
+>>> s_list = list(s)
+>>> s_list
+['q', 'y', 't', 'a', 'n', 'g']
+>>> s_list[3] = 'A'
+>>> s_list
+['q', 'y', 't', 'A', 'n', 'g']
+>>> s = ''.join(s_list)
+>>> s
+'qytAng'
+>>> s = '/'.join(s_list)
+>>> s
+'q/y/t/A/n/g'
+
+7、字符串格式化表达式与方法
+>>> x = 1
+>>> res = 'intergers:----%-10d-----%-10d----%010d' % (x,x,x)
+>>> res
+'intergers:----1         -----1         ----0000000001'
+>>> x = 111
+>>> res = 'intergers:----%-10d-----%-10d----%010d' % (x,x,x)
+>>> res
+'intergers:----111       -----111       ----0000000111'
+>>> x = 111111
+>>> res = 'intergers:----%-10d-----%-10d----%010d' % (x,x,x)
+>>> res
+'intergers:----111111    -----111111    ----0000111111'
+>>> x = 1.23232323
+>>> '%-6.2f---%05.2f---%+06.1f---+%06.1f' % (x,x,x,x)
+'1.23  ---01.23---+001.2---+0001.2'
+>>> format = '{:<10}---{:<10}'.format('python','netdevops')
+>>> format
+'python    ---netdevops '
+>>> format = '{:<10.2f}---{:<10.3f}'.format(1.12222,2.2222)
+>>> format
+'1.12      ---2.222     '
+>>> str1 = 'qytang'
+>>> int1 = 25
+>>> f'{str1:<} has {int1:<.2f}'
+'qytang has 25.00'
+
+
+
+
+
