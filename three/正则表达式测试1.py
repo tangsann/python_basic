@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 # coding=utf-8
+import re
 str = '166 54a2.74f7.0326 DYNAMIC Gi1/0/11'
-new_str = str.split()
+new_str = re.split('\s',str)
 vlan_id = new_str[0]
 mac = new_str[1]
 type = new_str[2]
