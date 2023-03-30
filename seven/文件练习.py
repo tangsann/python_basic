@@ -18,9 +18,12 @@ qytang3.close()
 os.mkdir('qytang4')
 os.mkdir('qytang5')
 for root,dirs,files in os.walk(os.getcwd(),topdown=False):
-    for name in files:
-        if 'qytang' in open(os.path.join(root,name)).read():
-            print(name)
+    for file_name in files:
+        #if 'qytang' in open(os.path.join(root,name)).read():
+        for line in open(os.path.join(root,file_name)):
+            if 'qytang' in line:
+                print(file_name)
+                break
 os.chdir('..')
 for root,dirs,files in os.walk('test',topdown=False):
     for name in files:
