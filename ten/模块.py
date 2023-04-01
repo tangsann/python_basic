@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 # -*- coding=utf-8 -*
-from paramiko练习_ssh import get_ssh
-from 函数_ping import ping
+from python_basic.eight.函数_ping import ping
+from python_basic.nine.paramiko练习_ssh import get_ssh
+# from paramiko练习_ssh import get_ssh
+# from 函数_ping import ping
 import re
 import pprint
 def qytang_get_if(*ips, username='admin', password='123456'):
