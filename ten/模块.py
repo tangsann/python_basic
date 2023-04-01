@@ -14,7 +14,6 @@ def qytang_get_if(*ips, username='admin', password='123456'):
                 re_result = re.match(r'([A-Z]\S+\d+)\s+'
                                      r'(\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3})\s+'
                                      r'\w+\s+\w+\s+\w+\s+\w+',line.strip())
-                # print(re_result)
                 if re_result:
                     if_dict[re_result.groups()[0]] = re_result.groups()[1]
         device_if_dict[ip] = if_dict

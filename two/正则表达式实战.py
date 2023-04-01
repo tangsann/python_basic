@@ -3,6 +3,8 @@
 import re
 str1 = 'Port-channel1.189    192.168.189.254  YES    CONFIG  up '
 re_str1 = re.match('^([A-Z]\S+)\s+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s+[A-Z]+\s+[A-Z]+\s+([a-z]+)\s+$',str1).groups()
+# print(re_str1)
+# print(type(re_str1))
 interfaces = re_str1[0]
 ip = re_str1[1]
 status = re_str1[2]
