@@ -8,11 +8,9 @@ class Ping:
         self.ip = ip
         self.srcip = srcip
         self.length = length
-
     def make_pkt(self):
         data = b'a' * self.length
         self.pkt = IP(dst=self.ip,src = self.srcip)/ICMP()/data
-
     def one(self):
         self.make_pkt()
         ping_result = sr1(self.pkt, timeout=2, verbose=False)
@@ -20,9 +18,7 @@ class Ping:
             print(f'{self.ip} 可达！')
         else:
             print(f'{self.ip} 不可达！')
-
     def ping(self,online='!',timeout='.'):
-
         self.make_pkt()
         for count in range(5):
             ping_result = sr1(self.pkt, timeout=2, verbose=False)
@@ -31,7 +27,6 @@ class Ping:
             else:
                 print(timeout, end='',flush=True)
         print()
-
     def __str__(self):
         if self.srcip == '192.168.3.75':
             return f'<{self.__class__.__name__}=> dstip:{self.ip}, size:{self.length}>'
@@ -64,14 +59,4 @@ if __name__ == '__main__':
     newping.length = 300
     print(newping)
     newping.ping()
-
-
-
-
-
-
-
-
-
-
 
